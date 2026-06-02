@@ -1,0 +1,346 @@
+/* ============================
+   全体
+============================ */
+/* すべての要素の幅計算を安定させる */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    background: #faf7f2; /* ミルクベージュ */
+    color: #444;
+    font-family: "Noto Sans JP", sans-serif;
+    padding: 30px;
+    line-height: 1.7;
+}
+
+/* ============================
+   タイトル
+============================ */
+.title {
+    font-size: 28px;
+    color: #c97b84; /* くすみピンク */
+    border-left: 6px solid #d9a5ac;
+    padding-left: 12px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+/* ============================
+   メニューに戻るボタン
+============================ */
+.back-menu-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    background: #c97b84;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.2s;
+    box-shadow: 0 3px 6px rgba(201, 123, 132, 0.25);
+}
+
+.back-menu-btn:hover {
+    background: #b86a73;
+}
+
+/* ============================
+   フォーム
+============================ */
+.form-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #e8dcd8;
+    max-width: 700px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 10px rgba(201, 123, 132, 0.1);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    color: #b86a73;
+    font-weight: bold;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    background: #fdf9f7;
+    border: 1px solid #e4c9c9;
+    color: #444;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+/* ============================
+   決定ボタン
+============================ */
+.submit-btn {
+    margin-top: 20px;
+    background: #c97b84;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 10px rgba(201, 123, 132, 0.25);
+}
+
+.submit-btn:hover {
+    background: #b86a73;
+}
+
+/* ============================
+   座席ボタン
+============================ */
+.seat-btn {
+    padding: 10px 14px;
+    margin: 5px;
+    background: #fff;
+    border: 1px solid #e4c9c9;
+    color: #444;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.seat-btn:hover {
+    background: #f7efee;
+}
+
+.seat-btn.disabled {
+    background: #f0f0f0;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.seat-btn.active {
+    background: #c97b84;
+    color: #fff;
+    border-color: #b86a73;
+}
+
+/* ============================
+   テーブル（予約一覧）
+============================ */
+.reservation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(201, 123, 132, 0.1);
+}
+
+.reservation-table th {
+    background: #c97b84;
+    color: #fff;
+    padding: 12px;
+    font-size: 15px;
+}
+
+.reservation-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f0e6e4;
+}
+
+.reservation-table tr:nth-child(even) {
+    background: #faf5f4;
+}
+
+.reservation-table tr:hover {
+    background: #f3eaea;
+}
+
+/* ============================
+   コースタグ
+============================ */
+.course-tag {
+    padding: 4px 8px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.course-seat_only { background: #9e9e9e; }
+.course-4400 { background: #8ab8a8; } /* くすみミント */
+.course-5500 { background: #c97b84; }
+.course-6600 { background: #a85f68; }
+
+/* ============================
+   タブ
+============================ */
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background: #f7efee;
+    color: #b86a73;
+    padding: 10px 18px;
+    border: 1px solid #e4c9c9;
+    border-radius: 25px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.tab-btn:hover {
+    background: #f0e6e4;
+}
+
+.tab-btn.active {
+    background: #c97b84;
+    color: #fff;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ============================
+   メニュー画面
+============================ */
+.menu-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.menu-title {
+    font-size: 32px;
+    color: #c97b84;
+    border-left: 6px solid #d9a5ac;
+    padding-left: 12px;
+    margin-bottom: 30px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    background: #ffffff;
+    border: 1px solid #e4c9c9;
+    border-radius: 15px;
+    padding: 25px;
+    text-decoration: none;
+    color: #444;
+    transition: 0.2s;
+    box-shadow: 0 4px 10px rgba(201, 123, 132, 0.1);
+}
+
+.menu-card:hover {
+    background: #fdf7f7;
+    border-color: #c97b84;
+    transform: translateY(-3px);
+}
+
+.menu-card h2 {
+    margin: 0;
+    font-size: 22px;
+    color: #c97b84;
+}
+
+.menu-card p {
+    margin-top: 8px;
+    color: #666;
+}
+
+/* ボタン横並び */
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* 予約登録ボタン & メニューに戻るボタン（統一デザイン） */
+.action-btn {
+    background: #c97b84;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(201, 123, 132, 0.25);
+    transition: 0.2s;
+}
+
+.action-btn:hover {
+    background: #b86a73;
+}
+
+/* ボタンを中央揃えにする */
+.form-buttons {
+    display: flex;
+    justify-content: center; /* ★ 中央揃え */
+    gap: 15px;
+    margin-top: 25px;
+}
+
+/* 予約一覧テーブルの文字を中央揃え */
+.reservation-table th,
+.reservation-table td {
+    text-align: center;
+}
+
+/* ============================
+   スマホ最適化
+============================ */
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .form-box {
+        padding: 20px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-table th,
+    .reservation-table td {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    .action-btn,
+    .back-menu-btn {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .form-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .seat-btn {
+        width: 28%;
+        font-size: 13px;
+        padding: 8px;
+    }
+}
+
